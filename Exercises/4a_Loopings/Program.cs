@@ -46,6 +46,5 @@ internal class Program
             }
             Console.WriteLine();
         }
-
     }
 }
