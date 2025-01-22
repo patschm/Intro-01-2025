@@ -1,4 +1,4 @@
-﻿namespace _4a_looping
+﻿namespace ForLooping
 {
     internal class Program
     {
