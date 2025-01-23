@@ -6,6 +6,18 @@
         {
             // Big bang
 
+
+            Apple t1 = new Apple
+            {
+                Mute = true
+            };
+           
+            t1.LaadOp();
+
+            Samsung s1 = new Samsung();
+            s1.LaadOp();
+            
+
             Telefoon telefoon1 = new Telefoon();
             telefoon1.Hoogte = -15;
             telefoon1.Merk = "Samsung";
@@ -43,7 +55,6 @@
             // Big crunch
         }
     }
-
 
     // Blauwdruk telefoon 
     // Custom type
@@ -111,16 +122,60 @@
         // Hiermee gaaf je FIELDS!!!!!!!! en initiele waarde
         public Telefoon()
         {
-            Console.WriteLine("Een telefoon");
             chargePort = new OplaadPoort();
         }
         public Telefoon(string merk, int hoogte, int breedte, int diepte)
         {
             // this betekent ik! Me myself and I
             Hoogte = hoogte;
-            this.breedte = breedte;
-            this.diepte = diepte;
+            Breedte = breedte;
+            Diepte = diepte;
             Merk = merk;
+        }
+    }
+
+    // Apple erft van Telefoon 
+    class Apple : Telefoon
+    {
+        public bool Mute { get; set; }
+
+        public void LaadOp()
+        {
+            Console.WriteLine($"De {Merk} IPhone gaan nu laden ({Mute})");
+            chargePort.ZuigEnergie();
+        }
+        public Apple()
+        {
+            chargePort = new OplaadPoort();
+            Merk = "Apple";
+        }
+        public Apple(string merk, int hoogte, int breedte, int diepte)
+        {
+            Hoogte = hoogte;
+            Breedte = breedte;
+            Diepte = diepte;
+            Merk = "Apple";
+        }
+    }
+
+    class Samsung : Telefoon
+    {
+        public void LaadOp()
+        {
+            Console.WriteLine($"De {Merk} S25 gaan nu laden");
+            chargePort.ZuigEnergie();
+        }
+        public Samsung()
+        {
+            chargePort = new OplaadPoort();
+            Merk = "Samsung";
+        }
+        public Samsung(string merk, int hoogte, int breedte, int diepte)
+        {
+            Hoogte = hoogte;
+            Breedte = breedte;
+            Diepte = diepte;
+            Merk = "Samsung";
         }
     }
 }
