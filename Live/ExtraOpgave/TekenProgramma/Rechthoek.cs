@@ -28,7 +28,7 @@
             }
         }
 
-        public void Teken()
+        public override void Teken()
         {
             Console.ForegroundColor = kleur;
             Console.WriteLine($"Rechthoek op ({x}, {y}) met lengte {Lengte} en breedte {Breedte}");

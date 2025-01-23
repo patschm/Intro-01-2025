@@ -69,7 +69,7 @@
             Cirkel c1 = new Cirkel();
             c1.kleur = (ConsoleColor)Random.Shared.Next(0, 16);
             c1.y = Random.Shared.Next(0, 500);
-            c1.y = Random.Shared.Next(0, 500);
+            c1.x = Random.Shared.Next(0, 500);
             c1.Straal = Random.Shared.Next(10, 300);
             return c1;
         }
@@ -79,7 +79,7 @@
             Rechthoek r1 = new Rechthoek();
             r1.kleur = (ConsoleColor)Random.Shared.Next(0, 16);
             r1.y = Random.Shared.Next(0, 500);
-            r1.y = Random.Shared.Next(0, 500);
+            r1.x = Random.Shared.Next(0, 500);
             r1.Breedte = Random.Shared.Next(10, 400);
             r1.Lengte = Random.Shared.Next(0, 400); ;
             return r1;

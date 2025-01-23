@@ -6,7 +6,7 @@
         public int x;
         public int y;
 
-        public void Teken()
+        public virtual void Teken()
         {
             Console.WriteLine("Vorm");
         }

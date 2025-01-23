@@ -66,7 +66,7 @@
         private int _hoogte = 20;
         // int breedte;
         //public int diepte;
-        public OplaadPoort chargePort = new OplaadPoort();
+        protected OplaadPoort chargePort = new OplaadPoort();
 
 
         // propfull
@@ -113,9 +113,14 @@
         //    return _hoogte;
         //}
         // Methods. Hierin definieren we het gedrag van het object
-        public void LaadOp()
+        // Met virtual geef ik aan dat deze methode polymorfisme ondersteunt.
+        // Met virtual is polymorfisme OPTIONEEEL!
+        // Als ik dat optionele niet wil, maak ik de methode abstract ipv virtual.
+        // Dit heeft dan wel tot gevolg dat de hele class abstract wordt.
+        //public abstract void LaadOp();
+        public virtual void LaadOp()
         {
-            Console.WriteLine($"De {Merk} gaan nu laden");
+            //Console.WriteLine($"De {Merk} gaan nu laden");
             chargePort.ZuigEnergie();
         }
 
@@ -140,14 +145,18 @@
     {
         public bool Mute { get; set; }
 
-        public void LaadOp()
+        //public LighteningPoort Poort { get; set; } = new LighteningPoort()
+
+        // Met override activeer ik polymorfisme.
+        public override void LaadOp()
         {
             Console.WriteLine($"De {Merk} IPhone gaan nu laden ({Mute})");
-            chargePort.ZuigEnergie();
+            // chargePort.ZuigEnergie();
+            base.LaadOp();
         }
         public Apple()
         {
-            chargePort = new OplaadPoort();
+            chargePort = new LighteningPoort();
             Merk = "Apple";
         }
         public Apple(string merk, int hoogte, int breedte, int diepte)
@@ -161,14 +170,15 @@
 
     class Samsung : Telefoon
     {
-        public void LaadOp()
+        public override void LaadOp()
         {
             Console.WriteLine($"De {Merk} S25 gaan nu laden");
-            chargePort.ZuigEnergie();
+            //chargePort.ZuigEnergie();
+            base.LaadOp();
         }
         public Samsung()
         {
-            chargePort = new OplaadPoort();
+            chargePort = new USBCPoort();
             Merk = "Samsung";
         }
         public Samsung(string merk, int hoogte, int breedte, int diepte)

@@ -16,7 +16,7 @@
             }
         }
 
-        public void Teken()
+        public override void Teken()
         {
             Console.ForegroundColor = kleur;
             Console.WriteLine($"Cirkel op ({x}, {y}) met straal {Straal}");
