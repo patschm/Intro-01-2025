@@ -10,16 +10,21 @@
             telefoon1.hoogte = 15;
             telefoon1.merkNaam = "Samsung";
 
-            Console.WriteLine(telefoon1.hoogte);
+            telefoon1.LaadOp();
+
+            //Console.WriteLine(telefoon1.hoogte);
 
             Telefoon telefoon2 = new Telefoon();
             telefoon2.hoogte = 22;
             telefoon2.merkNaam = "Apple";
 
+            telefoon2.LaadOp();
+
             Console.WriteLine(telefoon2.hoogte);
 
             Telefoon telefoon3 = new Telefoon("LG", 20, 10, 1);
-            
+            telefoon3.LaadOp();
+
             Console.WriteLine(telefoon3.hoogte);
 
 
@@ -41,19 +46,29 @@
 
     // Blauwdruk telefoon 
     // Custom type
+    //[Obsolete("Gebruik die andere class")]
     class Telefoon
     {
         // Fields. Hierin slaan we eigenschappen van het object op.
-        public int hoogte;
+        public int hoogte = 20;
         public int breedte;
         public int diepte;
         public string merkNaam;
+        public OplaadPoort chargePort = new OplaadPoort();
+
+        // Methods. Hierin definieren we het gedrag van het object
+        public void LaadOp()
+        {
+            Console.WriteLine($"De {merkNaam} gaan nu laden");
+            chargePort.ZuigEnergie();
+        }
 
         // Constructor.
         // Hiermee gaaf je FIELDS!!!!!!!! en initiele waarde
         public Telefoon()
         {
             Console.WriteLine("Een telefoon");
+            chargePort = new OplaadPoort();
         }
         public Telefoon(string merk, int hoogte, int breedte, int diepte)
         {
