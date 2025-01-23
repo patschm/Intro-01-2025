@@ -19,8 +19,8 @@
             r1.Lengte = 100;
 
             
-            canvas.cirkels.Add(c1);
-            canvas.rechthoeken.Add(r1);
+            canvas.vormen.Add(c1);
+            canvas.vormen.Add(r1);
 
             canvas.Refresh();
 
@@ -35,7 +35,7 @@
                 Straal = 200
             };
 
-            canvas.cirkels.Add(c2);
+            canvas.vormen.Add(c2);
             canvas.Refresh();
 
 
@@ -50,11 +50,11 @@
                 {
                     case ConsoleKey.R:
                         Rechthoek r = CreateRechthoek();
-                        canvas.rechthoeken.Add(r);
+                        canvas.vormen.Add(r);
                         break;
                     case ConsoleKey.C:
                         Cirkel c = CreateCirkel();
-                        canvas.cirkels.Add(c);
+                        canvas.vormen.Add(c);
                         break;
                     case ConsoleKey.Escape:
                         break;

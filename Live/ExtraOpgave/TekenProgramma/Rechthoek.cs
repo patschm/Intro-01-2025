@@ -1,10 +1,7 @@
 ﻿namespace TekenProgramma
 {
-    internal class Rechthoek
+    internal class Rechthoek : Vorm
     {
-        public ConsoleColor kleur;
-        public int x;
-        public int y;
         private float _lengte;
         private float _breedte;
 

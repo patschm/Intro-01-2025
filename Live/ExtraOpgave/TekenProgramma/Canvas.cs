@@ -2,20 +2,19 @@
 {
     internal class Canvas
     {
-        public List<Cirkel> cirkels = new List<Cirkel>();
-        public List<Rechthoek> rechthoeken = new List<Rechthoek>();
+        ///public List<Cirkel> cirkels = new List<Cirkel>();
+        //public List<Rechthoek> rechthoeken = new List<Rechthoek>();
+
+        public List<Vorm> vormen = new List<Vorm>();
 
         public void Refresh()
         {
             Console.Clear();
-            foreach(Cirkel cirkel in cirkels)
+            foreach(Vorm vorm in vormen)
             {
-                cirkel.Teken();
+                vorm.Teken();
             }
-            foreach(Rechthoek rechthoek in rechthoeken)
-            {
-                rechthoek.Teken();
-            }
+            
         }
     }
 }

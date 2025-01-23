@@ -1,10 +1,7 @@
 ﻿namespace TekenProgramma
 {
-    internal class Cirkel
+    internal class Cirkel : Vorm
     {
-        public ConsoleColor kleur;
-        public int x;
-        public int y;
         private float _straal;
 
         public float Straal

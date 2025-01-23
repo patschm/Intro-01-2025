@@ -6,15 +6,16 @@
         {
             // Big bang
 
+            // Generaliserem
 
-            Apple t1 = new Apple
+            Telefoon t1 = new Apple
             {
                 Mute = true
             };
            
             t1.LaadOp();
 
-            Samsung s1 = new Samsung();
+            Telefoon s1 = new Samsung();
             s1.LaadOp();
             
 
