@@ -5,12 +5,24 @@
         public ConsoleColor kleur;
         public int x;
         public int y;
-        public float straal;
+        private float _straal;
+
+        public float Straal
+        {
+            get { return _straal; }
+            set
+            {
+                if (value >= 0)
+                {
+                    _straal = value;
+                }
+            }
+        }
 
         public void Teken()
         {
             Console.ForegroundColor = kleur;
-            Console.WriteLine($"Cirkel op ({x}, {y}) met straal {straal}");
+            Console.WriteLine($"Cirkel op ({x}, {y}) met straal {Straal}");
             Console.ResetColor();
         }
     }

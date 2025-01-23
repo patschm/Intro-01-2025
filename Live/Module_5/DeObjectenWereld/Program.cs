@@ -68,11 +68,11 @@
 
 
         // Auto-generating properties. Die genereert zijn eigen private field
-        public string Merk { get; set; }
+        public string Merk { get; set; } = "Neutraal";
         // prop
         public int Diepte { get; set; }
 
-        // Properties. Met properties regel je de (gecontroleerde) toegang tot jour private fields
+        // Properties. Met properties regel je de (gecontroleerde) toegang tot jouw private fields
         public int Hoogte
         {
             get

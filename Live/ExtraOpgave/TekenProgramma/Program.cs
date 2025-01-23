@@ -15,11 +15,10 @@
             r1.x = 300;
             r1.y = 100;
             r1.kleur = ConsoleColor.Green;
-            r1.breedte = 200;
-            r1.lengte = 100;
+            r1.Breedte = 200;
+            r1.Lengte = 100;
 
             
-
             canvas.cirkels.Add(c1);
             canvas.rechthoeken.Add(r1);
 
@@ -33,7 +32,7 @@
                 x = 50,
                 y = 100,
                 kleur = ConsoleColor.Blue,
-                straal = 200
+                Straal = 200
             };
 
             canvas.cirkels.Add(c2);
@@ -71,7 +70,7 @@
             c1.kleur = (ConsoleColor)Random.Shared.Next(0, 16);
             c1.y = Random.Shared.Next(0, 500);
             c1.y = Random.Shared.Next(0, 500);
-            c1.straal = Random.Shared.Next(10, 300);
+            c1.Straal = Random.Shared.Next(10, 300);
             return c1;
         }
 
@@ -81,8 +80,8 @@
             r1.kleur = (ConsoleColor)Random.Shared.Next(0, 16);
             r1.y = Random.Shared.Next(0, 500);
             r1.y = Random.Shared.Next(0, 500);
-            r1.breedte = Random.Shared.Next(10, 400);
-            r1.lengte = Random.Shared.Next(0, 400); ;
+            r1.Breedte = Random.Shared.Next(10, 400);
+            r1.Lengte = Random.Shared.Next(0, 400); ;
             return r1;
         }
     }
