@@ -65,7 +65,6 @@
             while (true);
         }
 
-
         static Cirkel CreateCirkel()
         {
             Cirkel c1 = new Cirkel();

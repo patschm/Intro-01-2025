@@ -7,30 +7,31 @@
             // Big bang
 
             Telefoon telefoon1 = new Telefoon();
-            telefoon1.hoogte = 15;
-            telefoon1.merkNaam = "Samsung";
+            telefoon1.Hoogte = -15;
+            telefoon1.Merk = "Samsung";
 
             telefoon1.LaadOp();
 
-            //Console.WriteLine(telefoon1.hoogte);
+            Console.WriteLine(telefoon1.Hoogte);
 
             Telefoon telefoon2 = new Telefoon();
-            telefoon2.hoogte = 22;
-            telefoon2.merkNaam = "Apple";
+            telefoon2.Hoogte = 15;
+            //.hoogte = 22;
+            telefoon2.Merk = "Apple";
 
             telefoon2.LaadOp();
 
-            Console.WriteLine(telefoon2.hoogte);
+            Console.WriteLine(telefoon2.Hoogte);
 
             Telefoon telefoon3 = new Telefoon("LG", 20, 10, 1);
             telefoon3.LaadOp();
 
-            Console.WriteLine(telefoon3.hoogte);
+            Console.WriteLine(telefoon3.Hoogte);
 
 
-            Console.WriteLine(telefoon1.merkNaam);
-            Console.WriteLine(telefoon2.merkNaam);
-            Console.WriteLine(telefoon3.merkNaam);
+            Console.WriteLine(telefoon1.Merk);
+            Console.WriteLine(telefoon2.Merk);
+            Console.WriteLine(telefoon3.Merk);
 
             Telefoon[] telefoons = new Telefoon[10];
 
@@ -50,16 +51,59 @@
     class Telefoon
     {
         // Fields. Hierin slaan we eigenschappen van het object op.
-        public int hoogte = 20;
-        public int breedte;
-        public int diepte;
-        public string merkNaam;
+        private int _hoogte = 20;
+        // int breedte;
+        //public int diepte;
         public OplaadPoort chargePort = new OplaadPoort();
 
+
+        // propfull
+        private int _breedte;
+
+        public int Breedte
+        {
+            get { return _breedte; }
+            set { _breedte = value; }
+        }
+
+
+        // Auto-generating properties. Die genereert zijn eigen private field
+        public string Merk { get; set; }
+        // prop
+        public int Diepte { get; set; }
+
+        // Properties. Met properties regel je de (gecontroleerde) toegang tot jour private fields
+        public int Hoogte
+        {
+            get
+            {
+                return _hoogte;
+            }
+            set
+            {
+                if (value >= 0 && value < 40)
+                {
+                    _hoogte = value;
+                }
+            }
+        }
+
+        // Zo doen C++-ers dat
+        //public void SetHoogte(int hgt)
+        //{
+        //    if (hgt >= 0 && hgt < 40)
+        //    {
+        //        _hoogte = hgt;
+        //    }
+        //}
+        //public int GetHoogte()
+        //{
+        //    return _hoogte;
+        //}
         // Methods. Hierin definieren we het gedrag van het object
         public void LaadOp()
         {
-            Console.WriteLine($"De {merkNaam} gaan nu laden");
+            Console.WriteLine($"De {Merk} gaan nu laden");
             chargePort.ZuigEnergie();
         }
 
@@ -73,10 +117,10 @@
         public Telefoon(string merk, int hoogte, int breedte, int diepte)
         {
             // this betekent ik! Me myself and I
-            this.hoogte = hoogte;
+            Hoogte = hoogte;
             this.breedte = breedte;
             this.diepte = diepte;
-            merkNaam = merk;
+            Merk = merk;
         }
     }
 }
