@@ -1,0 +1,7 @@
+﻿namespace DeObjectenWereld
+{
+    class Deur
+    {
+
+    }
+}

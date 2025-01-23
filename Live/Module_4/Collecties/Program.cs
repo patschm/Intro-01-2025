@@ -81,6 +81,9 @@ namespace Collecties
             {
                 Console.WriteLine(test);
             }
+
+            int[,] matrix = new int[5,3];
+            matrix[0, 1] = 34;
         }
     }
 
